@@ -1,0 +1,24 @@
+<p><%= flash.now[:errors] %></p>
+
+<h1>Create a sub</h1>
+
+
+
+
+
+
+
+<form action="<%= subs_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label>
+    Title
+    <input type="text" name="sub[title]" value="<%= @sub.title %>">
+  </label>
+
+  <label for="description">Description</label>
+  <textarea name="sub[description" id="description"><%= @sub.description %></textarea>
+
+
+  <button>Create sub</button>
+</form>

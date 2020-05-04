@@ -1,0 +1,18 @@
+<h1>Sub: <%= @sub.title %></h1>
+
+<p><%= @sub.description %></p>
+
+<% if current_user.id == @sub.moderator.id %>
+
+  <a href="<%= edit_sub_url(@sub) %>">Edit sub</a>
+
+<% end %>
+
+
+<p>Moderator: <a href="<%= user_url(@sub.moderator) %>"><%= @sub.moderator.username %></a></p>
+
+<h2>Posts</h2>
+
+<% path = new_post_url + "?sub_id=" + @sub.id.to_s %>
+<a href="<%= path %>">Create a post in this sub</a>
+

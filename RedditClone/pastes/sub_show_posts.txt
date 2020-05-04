@@ -1,0 +1,9 @@
+<ul>
+<% @posts.each do |post| %>
+  <li>
+    <a href="<%= post_url(post) %>"><%= post.title %></a>
+    <br>
+    <span>by <a href="<%= user_url(post.author) %>"><%= post.author.username %></a></span>
+  </li>
+<% end %>
+</ul>

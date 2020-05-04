@@ -1,0 +1,15 @@
+<h2>Subs:</h2>
+<ul>
+<% @post.subs.each do |sub| %>
+  <li><a href="<%= sub_url(sub) %>"><%= sub.title %></a></li>
+<% end %>
+</ul>
+
+
+<h1>Title: <%= @post.title %></h1>
+
+<p>Author: <a href="<%= user_url(@post.author) %>"><%= @post.author.username %></a></p>
+
+<p>Share: <%= @post.url %></p>
+
+<p><%= @post.content %></p>
